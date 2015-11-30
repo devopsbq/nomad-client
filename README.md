@@ -1,6 +1,6 @@
-# NOMAD (java) client
+# Nomad (java) client
 
-Based on Nomad 0.2.0
+Based on [Nomad](https://nomadproject.io/) 0.2.0
 
 
 ### How to use
