@@ -5,7 +5,7 @@ Based on [Nomad](https://nomadproject.io/) 0.2.0
 
 ### How to use
 
-Insert on your pom.xmInsert on your pom.xml
+Insert on your pom.xmInsert on your pom.xml:
 
 ```xml
 <dependency>
@@ -15,6 +15,7 @@ Insert on your pom.xmInsert on your pom.xml
 </dependency>
 ```
 
+On your code:
 
 ```java
 Nomad nomad = NomadClient.getInstance("http://<ip>:<port>");
