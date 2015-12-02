@@ -11,10 +11,13 @@ public class Config {
     private String image;
     private List<Auth> auth;
     private List<Map<String, Long>> port_map;
+    private List<Map<String, String>> labels;
 
     public Config() {
         this.port_map = new ArrayList<Map<String, Long>>();
         this.port_map.add(new HashMap<String, Long>());
+        this.labels = new ArrayList<Map<String, String>>();
+        this.labels.add(new HashMap<String, String>());
         this.auth = new ArrayList<Auth>();
     }
 
@@ -49,6 +52,26 @@ public class Config {
 
     public void addPortMap(String label, long port) {
         this.port_map.get(0).put(label, port);
+    }
+
+    public List<Map<String, String>> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<Map<String, String>> labels) {
+        this.labels = labels;
+    }
+
+    public void addLabel(String name, String value) {
+        this.labels.get(0).put(name, value);
+    }
+
+    public void addLabels(Map<String, String> labels) {
+        if (labels != null) {
+            for (Map.Entry<String, String> entry : labels.entrySet()) {
+                this.labels.get(0).put(entry.getKey(), entry.getValue());
+            }
+        }
     }
 
     public void addAuth(Auth auth) {
