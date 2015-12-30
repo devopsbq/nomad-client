@@ -1,9 +1,10 @@
 package es.bq.devops.nomad.client.model.v1;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import es.bq.devops.nomad.client.utils.Utils;
 
@@ -19,7 +20,7 @@ public class Task {
 
     public Task() {
         this.Services = new ArrayList<Service>();
-        this.Env = new HashMap<String, String>();
+        this.Env = new LinkedHashMap<String, String>();
     }
 
     public Task(String name, String driver) {
@@ -77,11 +78,13 @@ public class Task {
     }
 
     public Map<String, String> getEnv() {
-        return Env;
+        return this.Env;
     }
 
     public void setEnv(Map<String, String> env) {
-        Env = env;
+        if (env != null) {
+            this.Env = env;
+        }
     }
 
     public Map<String, String> getMeta() {
@@ -98,6 +101,14 @@ public class Task {
 
     public void addEnvVar(String name, String value) {
         this.Env.put(name, value);
+    }
+
+    public void addEnvs(Map<String, String> env) {
+        if (env != null) {
+            for (Entry<String, String> e : env.entrySet()) {
+                this.Env.put(e.getKey(), e.getValue());
+            }
+        }
     }
 
     @Override

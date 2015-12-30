@@ -1,5 +1,6 @@
 package es.bq.devops.nomad.client.model.v1;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +19,7 @@ public class Job extends BaseJob {
     private Map<String, String> Meta;
 
     public Job() {
+        this.TaskGroups = new ArrayList<TaskGroup>();
         this.setPriority(50);
         this.setType(SERVICE);
     }
@@ -82,6 +84,10 @@ public class Job extends BaseJob {
 
     public void setMeta(Map<String, String> meta) {
         Meta = meta;
+    }
+
+    public void addTaskGroup(TaskGroup taskGroup) {
+        this.TaskGroups.add(taskGroup);
     }
 
     @Override

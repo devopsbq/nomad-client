@@ -10,6 +10,9 @@ import es.bq.devops.nomad.client.utils.Utils;
 public class Config {
     private String image;
     private List<Auth> auth;
+    private String network_mode;
+    private String hostname;
+    private List<String> dns_search_domains;
     private List<Map<String, Long>> port_map;
     private List<Map<String, String>> labels;
 
@@ -19,6 +22,7 @@ public class Config {
         this.labels = new ArrayList<Map<String, String>>();
         this.labels.add(new HashMap<String, String>());
         this.auth = new ArrayList<Auth>();
+        this.dns_search_domains = new ArrayList<String>();
     }
 
     public Config(String image) {
@@ -40,6 +44,30 @@ public class Config {
 
     public void setAuth(List<Auth> auth) {
         this.auth = auth;
+    }
+
+    public String getNetwork_mode() {
+        return network_mode;
+    }
+
+    public void setNetwork_mode(String network_mode) {
+        this.network_mode = network_mode;
+    }
+
+    public String getHostname() {
+        return hostname;
+    }
+
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
+    }
+
+    public List<String> getDns_search_domains() {
+        return dns_search_domains;
+    }
+
+    public void setDns_search_domains(List<String> dns_search_domains) {
+        this.dns_search_domains = dns_search_domains;
     }
 
     public List<Map<String, Long>> getPort_map() {
