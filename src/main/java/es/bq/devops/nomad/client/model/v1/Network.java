@@ -69,6 +69,10 @@ public class Network {
         this.DynamicPorts.add(labelPort);
     }
 
+    public void addDynamicPort(String label) {
+        this.DynamicPorts.add(new LabelPort(label, 0));
+    }
+
     @Override
     public String toString() {
         return Utils.toString(this);
