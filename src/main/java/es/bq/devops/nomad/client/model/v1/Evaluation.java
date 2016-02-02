@@ -3,141 +3,171 @@ package es.bq.devops.nomad.client.model.v1;
 import es.bq.devops.nomad.client.utils.Utils;
 
 public class Evaluation {
-    private String id;
-    private Integer priority;
-    private String type;
-    private String triggeredBy;
-    private String jobID;
-    private Integer jobModifyIndex;
-    private String nodeID;
-    private Integer nodeModifyIndex;
-    private String status;
-    private String statusDescription;
-    private Integer wait;
-    private String nextEval;
-    private String previousEval;
-    private Integer createIndex;
-    private Integer modifyIndex;
+    private String ID;
+    private Integer Priority;
+    private String Type;
+    private String TriggeredBy;
+    private String JobID;
+    private Integer JobModifyIndex;
+    private String NodeID;
+    private Integer NodeModifyIndex;
+    private String Status;
+    private String StatusDescription;
+    private Integer Wait;
+    private String NextEval;
+    private String PreviousEval;
+    private Integer CreateIndex;
+    private Integer ModifyIndex;
 
-    public String getId() {
-        return id;
+    public String getID() {
+        return ID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+
+    public void setID(String iD) {
+        ID = iD;
     }
+
 
     public Integer getPriority() {
-        return priority;
+        return Priority;
     }
+
 
     public void setPriority(Integer priority) {
-        this.priority = priority;
+        Priority = priority;
     }
+
 
     public String getType() {
-        return type;
+        return Type;
     }
+
 
     public void setType(String type) {
-        this.type = type;
+        Type = type;
     }
+
 
     public String getTriggeredBy() {
-        return triggeredBy;
+        return TriggeredBy;
     }
+
 
     public void setTriggeredBy(String triggeredBy) {
-        this.triggeredBy = triggeredBy;
+        TriggeredBy = triggeredBy;
     }
+
 
     public String getJobID() {
-        return jobID;
+        return JobID;
     }
+
 
     public void setJobID(String jobID) {
-        this.jobID = jobID;
+        JobID = jobID;
     }
+
 
     public Integer getJobModifyIndex() {
-        return jobModifyIndex;
+        return JobModifyIndex;
     }
+
 
     public void setJobModifyIndex(Integer jobModifyIndex) {
-        this.jobModifyIndex = jobModifyIndex;
+        JobModifyIndex = jobModifyIndex;
     }
+
 
     public String getNodeID() {
-        return nodeID;
+        return NodeID;
     }
+
 
     public void setNodeID(String nodeID) {
-        this.nodeID = nodeID;
+        NodeID = nodeID;
     }
+
 
     public Integer getNodeModifyIndex() {
-        return nodeModifyIndex;
+        return NodeModifyIndex;
     }
+
 
     public void setNodeModifyIndex(Integer nodeModifyIndex) {
-        this.nodeModifyIndex = nodeModifyIndex;
+        NodeModifyIndex = nodeModifyIndex;
     }
+
 
     public String getStatus() {
-        return status;
+        return Status;
     }
+
 
     public void setStatus(String status) {
-        this.status = status;
+        Status = status;
     }
+
 
     public String getStatusDescription() {
-        return statusDescription;
+        return StatusDescription;
     }
+
 
     public void setStatusDescription(String statusDescription) {
-        this.statusDescription = statusDescription;
+        StatusDescription = statusDescription;
     }
+
 
     public Integer getWait() {
-        return wait;
+        return Wait;
     }
+
 
     public void setWait(Integer wait) {
-        this.wait = wait;
+        Wait = wait;
     }
+
 
     public String getNextEval() {
-        return nextEval;
+        return NextEval;
     }
+
 
     public void setNextEval(String nextEval) {
-        this.nextEval = nextEval;
+        NextEval = nextEval;
     }
+
 
     public String getPreviousEval() {
-        return previousEval;
+        return PreviousEval;
     }
+
 
     public void setPreviousEval(String previousEval) {
-        this.previousEval = previousEval;
+        PreviousEval = previousEval;
     }
+
 
     public Integer getCreateIndex() {
-        return createIndex;
+        return CreateIndex;
     }
+
 
     public void setCreateIndex(Integer createIndex) {
-        this.createIndex = createIndex;
+        CreateIndex = createIndex;
     }
+
 
     public Integer getModifyIndex() {
-        return modifyIndex;
+        return ModifyIndex;
     }
 
+
     public void setModifyIndex(Integer modifyIndex) {
-        this.modifyIndex = modifyIndex;
+        ModifyIndex = modifyIndex;
     }
+
 
     @Override
     public String toString() {
