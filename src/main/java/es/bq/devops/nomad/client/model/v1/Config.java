@@ -15,6 +15,8 @@ public class Config {
     private List<String> dns_search_domains;
     private List<Map<String, Long>> port_map;
     private List<Map<String, String>> labels;
+    private String volume_driver;
+    private List<Map<String, String>> volume_map;
 
     public Config() {
         this.port_map = new ArrayList<Map<String, Long>>();
@@ -23,6 +25,8 @@ public class Config {
         this.labels.add(new HashMap<String, String>());
         this.auth = new ArrayList<Auth>();
         this.dns_search_domains = new ArrayList<String>();
+        this.volume_map = new ArrayList<Map<String, String>>();
+        this.volume_map.add(new HashMap<String, String>());
     }
 
     public Config(String image) {
@@ -90,6 +94,22 @@ public class Config {
         this.labels = labels;
     }
 
+    public String getVolume_driver() {
+        return volume_driver;
+    }
+
+    public void setVolume_driver(String volume_driver) {
+        this.volume_driver = volume_driver;
+    }
+
+    public List<Map<String, String>> getVolume_map() {
+        return volume_map;
+    }
+
+    public void setVolume_map(List<Map<String, String>> volume_map) {
+        this.volume_map = volume_map;
+    }
+
     public void addLabel(String name, String value) {
         this.labels.get(0).put(name, value);
     }
@@ -98,6 +118,18 @@ public class Config {
         if (labels != null) {
             for (Map.Entry<String, String> entry : labels.entrySet()) {
                 this.labels.get(0).put(entry.getKey(), entry.getValue());
+            }
+        }
+    }
+
+    public void addVolume(String mountpoint, String volume) {
+        this.volume_map.get(0).put(mountpoint, volume);
+    }
+
+    public void addVolumes(Map<String, String> volumes) {
+        if (volumes != null) {
+            for (Map.Entry<String, String> volume : volumes.entrySet()) {
+                this.volume_map.get(0).put(volume.getKey(), volume.getValue());
             }
         }
     }
