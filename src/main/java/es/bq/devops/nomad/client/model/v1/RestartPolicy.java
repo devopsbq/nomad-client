@@ -1,22 +1,29 @@
 package es.bq.devops.nomad.client.model.v1;
 
 public class RestartPolicy {
-    private int Attemps;
+
+    public enum RestartMode {
+        delay, fail
+    }
+
+    private int Attempts;
     private long Interval;
     private long Delay;
+    private RestartMode Mode;
 
-    public RestartPolicy(int attemps, long interval, long delay) {
-        this.Attemps = attemps;
+    public RestartPolicy(int attempts, long interval, long delay, RestartMode mode) {
+        this.Attempts = attempts;
         this.Interval = interval;
         this.Delay = delay;
+        this.Mode = mode;
     }
 
-    public int getAttemps() {
-        return Attemps;
+    public int getAttempts() {
+        return Attempts;
     }
 
-    public void setAttemps(int attemps) {
-        Attemps = attemps;
+    public void setAttempts(int attempts) {
+        Attempts = attempts;
     }
 
     public long getInterval() {
@@ -35,7 +42,15 @@ public class RestartPolicy {
         Delay = delay;
     }
 
+    public RestartMode getMode() {
+        return Mode;
+    }
+
+    public void setMode(RestartMode mode) {
+        Mode = mode;
+    }
+
     public static RestartPolicy Default() {
-        return new RestartPolicy(2, 600000000, 150000000);
+        return new RestartPolicy(2, 600000000, 150000000, RestartMode.delay);
     }
 }

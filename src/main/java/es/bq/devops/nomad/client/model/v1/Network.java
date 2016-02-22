@@ -13,8 +13,15 @@ public class Network {
     private Object ReservedPorts; // TODO
     private List<LabelPort> DynamicPorts;
 
+    private static final long MINIMUM_MBITS = 1;
+
     public Network() {
         this.DynamicPorts = new ArrayList<LabelPort>();
+    }
+
+    public Network(long mBits) {
+        this();
+        this.MBits = mBits;
     }
 
     public String getDevice() {
@@ -76,5 +83,9 @@ public class Network {
     @Override
     public String toString() {
         return Utils.toString(this);
+    }
+
+    public static Network Default() {
+        return new Network(MINIMUM_MBITS);
     }
 }

@@ -12,14 +12,24 @@ public class Resources {
     private long IOPS;
     private List<Network> Networks;
 
+    private static final long DEFAULT_DISK = 300;
+
     public Resources() {
         this.Networks = new ArrayList<Network>();
+        this.DiskMB = DEFAULT_DISK;
     }
 
     public Resources(long cpu, long memoryMB) {
         this();
         this.CPU = cpu;
         this.MemoryMB = memoryMB;
+    }
+
+    public Resources(long cpu, long memoryMB, long diskMB, long IOPS, List<Network> networks) {
+        this(cpu, memoryMB);
+        this.DiskMB = diskMB;
+        this.IOPS = IOPS;
+        this.Networks = networks;
     }
 
     public long getCPU() {

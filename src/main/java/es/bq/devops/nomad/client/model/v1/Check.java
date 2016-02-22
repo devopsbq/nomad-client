@@ -83,7 +83,7 @@ public class Check {
 
     public static Check Default() {
         Check check = new Check();
-        check.setInterval(0);
+        check.setInterval(1);
         check.setTimeout(2000000000);
         check.setType("tcp");
         return check;

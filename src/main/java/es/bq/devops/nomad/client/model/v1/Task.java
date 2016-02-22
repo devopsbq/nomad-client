@@ -17,10 +17,12 @@ public class Task {
     private List<Service> Services;
     private Map<String, String> Env;
     private Map<String, String> Meta;
+    private LogConfig LogConfig;
 
     public Task() {
         this.Services = new ArrayList<Service>();
         this.Env = new LinkedHashMap<String, String>();
+        this.setLogConfig(LogConfig.Default());
     }
 
     public Task(String name, String driver) {
@@ -93,6 +95,14 @@ public class Task {
 
     public void setMeta(Map<String, String> meta) {
         Meta = meta;
+    }
+
+    public LogConfig getLogConfig() {
+        return LogConfig;
+    }
+
+    public void setLogConfig(LogConfig logConfig) {
+        LogConfig = logConfig;
     }
 
     public void addService(Service service) {
