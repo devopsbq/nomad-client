@@ -11,6 +11,8 @@ public class Config {
     private String image;
     private List<Auth> auth;
     private String network_mode;
+    private String command;
+    private String args;
     private String hostname;
     private List<String> dns_search_domains;
     private List<Map<String, Long>> port_map;
@@ -56,6 +58,22 @@ public class Config {
 
     public void setNetwork_mode(String network_mode) {
         this.network_mode = network_mode;
+    }
+
+    public String getCommand() {
+        return command;
+    }
+
+    public void setCommand(String command) {
+        this.command = command;
+    }
+
+    public String getArgs() {
+        return args;
+    }
+
+    public void setArgs(String args) {
+        this.args = args;
     }
 
     public String getHostname() {
