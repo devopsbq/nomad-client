@@ -12,7 +12,7 @@ public class Config {
     private List<Auth> auth;
     private String network_mode;
     private String command;
-    private String args;
+    private List<String> args;
     private String hostname;
     private List<String> dns_search_domains;
     private List<Map<String, Long>> port_map;
@@ -68,11 +68,11 @@ public class Config {
         this.command = command;
     }
 
-    public String getArgs() {
+    public List<String> getArgs() {
         return args;
     }
 
-    public void setArgs(String args) {
+    public void setArgs(List<String> args) {
         this.args = args;
     }
 

@@ -1,5 +1,8 @@
 package es.bq.devops.nomad.client.model.v1;
 
+import java.math.BigDecimal;
+import java.util.Map;
+
 import es.bq.devops.nomad.client.utils.Utils;
 
 public class BaseAllocation {
@@ -11,10 +14,12 @@ public class BaseAllocation {
     private String TaskGroup;
     private String DesiredStatus;
     private String DesiredDescription;
-    private String ClientStatus;
+    private ClientStatus ClientStatus;
     private String ClientDescription;
+    private Map<String, TaskState> TaskStates;
     private long CreateIndex;
     private long ModifyIndex;
+    private BigDecimal CreateTime;
 
     public String getID() {
         return ID;
@@ -80,11 +85,11 @@ public class BaseAllocation {
         DesiredDescription = desiredDescription;
     }
 
-    public String getClientStatus() {
+    public ClientStatus getClientStatus() {
         return ClientStatus;
     }
 
-    public void setClientStatus(String clientStatus) {
+    public void setClientStatus(ClientStatus clientStatus) {
         ClientStatus = clientStatus;
     }
 
@@ -94,6 +99,14 @@ public class BaseAllocation {
 
     public void setClientDescription(String clientDescription) {
         ClientDescription = clientDescription;
+    }
+
+    public Map<String, TaskState> getTaskStates() {
+        return TaskStates;
+    }
+
+    public void setTaskStates(Map<String, TaskState> taskStates) {
+        TaskStates = taskStates;
     }
 
     public long getCreateIndex() {
@@ -110,6 +123,14 @@ public class BaseAllocation {
 
     public void setModifyIndex(long modifyIndex) {
         ModifyIndex = modifyIndex;
+    }
+
+    public BigDecimal getCreateTime() {
+        return CreateTime;
+    }
+
+    public void setCreateTime(BigDecimal createTime) {
+        CreateTime = createTime;
     }
 
     @Override

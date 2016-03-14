@@ -34,7 +34,7 @@ public class Allocation extends BaseAllocation {
     private Job Job;
     private Resources Resources;
     private Map<String, Networks> TaskResources;
-    private Map<String, Events> TaskStates;
+    private Map<String, TaskState> TaskStates;
     private Metrics Metrics;
 
     public Job getJob() {
@@ -61,11 +61,13 @@ public class Allocation extends BaseAllocation {
         TaskResources = taskResources;
     }
 
-    public Map<String, Events> getTaskStates() {
+    @Override
+    public Map<String, TaskState> getTaskStates() {
         return TaskStates;
     }
 
-    public void setTaskStates(Map<String, Events> taskStates) {
+    @Override
+    public void setTaskStates(Map<String, TaskState> taskStates) {
         TaskStates = taskStates;
     }
 
